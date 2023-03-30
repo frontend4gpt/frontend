@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Chat</title>
-        <link rel="stylesheet" href="./tailwind.css" />
-        <script rel="preload" src="./script.js" type="module"></script>
+        <link rel="stylesheet" href="./src/styles/tailwind.css" />
+        <script rel="preload" src="./src/scripts/index.js" type="module"></script>
     </head>
     <body
         class="w-full font-sans h-screen min-h-fit dark:bg-backgroundColor-dark-1 bg-backgroundColor-light-1 flex justify-center"
     >
         <div
             id="main"
-            class="flex flex-col max-w-screen-lg w-full dark:bg-backgroundColor-dark-1 bg-backgroundColor-light-2"
+            class="flex flex-col max-w-screen-lg w-full dark:bg-backgroundColor-dark-1 bg-backgroundColor-light-1"
         >
             <div
                 id="messages"
-                class="flex flex-col p-4 overflow-y-scroll grow gap-4 disable-scrollbar"
+                class="flex flex-col p-4 overflow-y-scroll grow gap-4 disable-scrollbar transition-all"
             ></div>
             <div
                 class="flex flex-col items-center justify-center data-[loading=false]:hidden p-4 gap-2"
@@ -31,20 +34,28 @@
                     id="loading-time"
                 ></span>
             </div>
-            <input id="token" class="peer outline-0 outline placeholder-shown:invalid:outline-0 placeholder-shown:invalid:focus:outline-2 invalid:outline-2 invalid:outline-red-800 m-4 p-6 text-white rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-4 font-semibold placeholder-shown:valid:flex valid:hidden" pattern="sk-[A-Za-z0-9+]{48}" placeholder="Enter an OpenAI API Token to continue..." type="text" />
+            <input
+                id="token"
+                class="peer outline-0 outline placeholder-shown:invalid:outline-0 placeholder-shown:invalid:focus:outline-2 invalid:outline-2 invalid:outline-red-800 m-4 p-6 text-white rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-3 font-semibold placeholder-shown:valid:flex valid:hidden"
+                pattern="sk-[A-Za-z0-9+]{48}"
+                placeholder="Enter an OpenAI API Token"
+                type="text"
+            />
             <form
                 id="input-container"
-                class="flex items-center p-4 bg-backgroundColor-light-3 dark:bg-backgroundColor-dark-2 rounded-lg m-4 peer-placeholder-shown:hidden peer-invalid:hidden gap-4"
+                class="flex items-center p-4 bg-backgroundColor-light-2 dark:bg-backgroundColor-dark-2 rounded-lg m-4 peer-placeholder-shown:hidden peer-invalid:hidden gap-4"
             >
                 <textarea
                     id="input"
-                    class="grow py-2 px-4 rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-4 placeholder:text-textColor-dark-3 outline outline-0 dark:text-textColor-dark-1 text-textColor-light-1 resize-none max-h-64 disable-scrollbar h-10"
+                    class="grow py-2 px-4 rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-3 placeholder:dark:text-textColor-dark-3 placeholder:text-textColor-light-3 outline outline-0 dark:text-textColor-dark-1 text-textColor-light-1 resize-none max-h-64 disable-scrollbar"
                     form="input-container"
                     placeholder="Type a message..."
+                    cols="1"
+                    rows="1"
                 ></textarea>
                 <input
                     id="input-send"
-                    class="px-4 py-2 text-white rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-4 hover:dark:bg-backgroundColor-dark-4 hover:bg-backgroundColor-light-5 font-semibold"
+                    class="px-4 py-2 dark:text-textColor-dark-1 text-textColor-light-1 rounded-lg dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-3 hover:dark:bg-backgroundColor-dark-4 hover:bg-backgroundColor-light-4 active:hover:dark:bg-backgroundColor-dark-5 active:hover:bg-backgroundColor-light-5 font-semibold transition-all"
                     type="submit"
                     value="Send"
                 />
