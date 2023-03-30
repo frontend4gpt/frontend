@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.message {
+    @apply w-full dark:bg-backgroundColor-dark-3 bg-backgroundColor-light-3 rounded-lg p-4 dark:text-textColor-dark-1 text-textColor-light-1 flex flex-col;
+}
+
+.message:nth-child(even) {
+    @apply dark:bg-backgroundColor-dark-4 bg-backgroundColor-light-4;
+}
+
+.message > .username {
+    @apply dark:text-textColor-dark-3 text-textColor-light-3 font-bold;
+}
+
+.message > .content {
+    @apply whitespace-pre
+}
+
+.disable-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.disable-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
