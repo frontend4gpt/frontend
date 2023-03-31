@@ -128,6 +128,8 @@ input.addEventListener('keydown', (event) => {
         event.target!.form.dispatchEvent(newEvent);
         event.preventDefault();
     }
-
-    inputSend.disabled = input.value.length !== 0;
 });
+
+input.addEventListener('keyup', () => {
+    inputSend.disabled = input.value.trim().length === 0;
+})
