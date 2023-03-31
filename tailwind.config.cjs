@@ -1,8 +1,11 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    content: ['**/*.html'],
-    theme: {
+	content: [
+        './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+        './src/styles/base.css'
+    ],
+	theme: {
         extend: {
             colors: {
                 backgroundColor: {
@@ -64,5 +67,5 @@ module.exports = {
             },
         },
     },
-    plugins: [],
-};
+	plugins: [],
+}

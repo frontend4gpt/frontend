@@ -1,0 +1,17 @@
+---
+import Block from '../components/Block.astro';
+import Button from '../components/Button.astro';
+import Text from '../components/Text.astro';
+import Title from '../components/Title.astro';
+import Page from '../layouts/Page.astro';
+---
+
+<Page title="404">
+    <div class="flex h-full items-center justify-center py-8">
+        <Block position="center">
+            <Title heading="2" title="404 - Page not found" />
+            <Text>We couldn't find the page you were looking for</Text>
+            <Button href="/" target="_self" title="Return to Home" />
+        </Block>
+    </div>
+</Page>

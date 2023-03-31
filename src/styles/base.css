@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.message {
+    @apply flex w-full flex-col gap-2 rounded-lg bg-gradient-to-br from-blue-300 via-indigo-300 to-violet-300 p-4 text-textColor-light-1 dark:from-blue-700 dark:via-indigo-700 dark:to-violet-700 dark:text-textColor-dark-1;
+}
+
+.message:nth-child(even) {
+    @apply bg-gradient-to-bl from-purple-300 via-fuchsia-300 to-pink-300 dark:from-purple-700 dark:via-fuchsia-700 dark:to-pink-700;
+}
+
+.message > .username {
+    @apply font-extrabold text-textColor-light-2 dark:text-textColor-dark-2;
+}
+
+.message > .content {
+    @apply whitespace-pre-wrap;
+}
+
+.disable-scrollbars::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
+}
+
+.disable-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@layer base {
+    ol {
+        @apply m-0 list-decimal;
+    }
+
+    ul {
+        @apply m-0 list-disc;
+    }
+
+    li {
+        @apply ml-4 list-inside leading-tight;
+    }
+}
+
+.h1 {
+    @apply text-4xl font-bold sm:text-5xl;
+}
+
+.h2 {
+    @apply text-2xl font-bold sm:text-3xl;
+}
+
+.h3 {
+    @apply text-xl font-bold sm:text-2xl;
+}
+
+.h4 {
+    @apply text-lg font-semibold sm:text-xl;
+}
+
+.h5 {
+    @apply text-base font-semibold sm:text-lg;
+}
+
+.h6 {
+    @apply text-sm font-normal sm:text-base;
+}

@@ -1,0 +1,50 @@
+---
+import Page from '../layouts/Page.astro';
+---
+
+<Page>
+    <script>
+        import '../scripts/pages/index.js';
+    </script>
+    <div id="messages" class="disable-scrollbar flex flex-1 basis-0 flex-col gap-4 overflow-y-auto"
+    ></div>
+    <div
+        class="flex shrink-0 flex-col items-center justify-center gap-2 pb-2 pt-4 data-[loading=false]:hidden"
+        data-loading="false"
+        id="loading"
+    >
+        <div
+            class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-textColor-light-1 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] dark:border-textColor-dark-1 dark:border-r-transparent"
+            role="status"
+        >
+        </div>
+        <span class="text-textColor-light-1 dark:text-textColor-dark-1" id="loading-time"></span>
+    </div>
+    <form
+        class="flex items-center gap-4 rounded-lg bg-backgroundColor-light-2 p-4 dark:bg-backgroundColor-dark-2"
+        id="input-form"
+    >
+        <input
+            id="token"
+            class="peer grow rounded-lg bg-backgroundColor-light-3 px-4 py-2 font-semibold text-white outline outline-0 valid:hidden placeholder-shown:valid:flex invalid:outline-2 invalid:outline-red-800 placeholder-shown:invalid:outline-0 placeholder-shown:invalid:focus:outline-2 dark:bg-backgroundColor-dark-3"
+            pattern="sk-[A-Za-z0-9+]{48}"
+            placeholder="Enter an OpenAI API Token"
+            type="text"
+        />
+        <textarea
+            id="input"
+            class="disable-scrollbar max-h-64 grow resize-none rounded-lg bg-backgroundColor-light-3 px-4 py-2 text-textColor-light-1 outline outline-0 placeholder:text-textColor-light-3 disabled:cursor-not-allowed peer-placeholder-shown:hidden peer-invalid:hidden dark:bg-backgroundColor-dark-3 dark:text-textColor-dark-1 placeholder:dark:text-textColor-dark-3"
+            form="input-form"
+            placeholder="Type a message..."
+            cols="1"
+            rows="1"></textarea>
+        <input
+            id="input-send"
+            class="rounded-lg bg-backgroundColor-light-3 px-4 py-2 font-semibold text-textColor-light-1 transition-all hover:bg-backgroundColor-light-4 active:hover:bg-backgroundColor-light-5 disabled:cursor-not-allowed disabled:hover:bg-backgroundColor-light-3 peer-placeholder-shown:hidden peer-invalid:hidden dark:bg-backgroundColor-dark-3 dark:text-textColor-dark-1 hover:dark:bg-backgroundColor-dark-4 active:hover:dark:bg-backgroundColor-dark-5 disabled:hover:dark:bg-backgroundColor-dark-3"
+            disabled
+            form="input-form"
+            type="submit"
+            value="Send"
+        />
+    </form>
+</Page>
