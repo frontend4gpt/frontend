@@ -97,7 +97,6 @@ inputForm.addEventListener('submit', async (event) => {
     clearInterval(timer);
 
     loading.dataset['loading'] = 'false';
-    inputSend.disabled = false;
     input.disabled = false;
 
     if (!response?.ok) {
