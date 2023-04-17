@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .message {
-    @apply flex w-full flex-col gap-2 rounded-lg bg-gradient-to-br from-blue-300 via-indigo-300 to-violet-300 p-4 text-textColor-light-1 dark:from-blue-700 dark:via-indigo-700 dark:to-violet-700 dark:text-textColor-dark-1;
+    @apply flex w-full flex-col gap-2 rounded-lg bg-gradient-to-br from-blue-300 via-indigo-300 to-violet-300 p-4 text-light-1 dark:from-blue-700 dark:via-indigo-700 dark:to-violet-700 dark:text-dark-1;
 }
 
 .message:nth-child(even) {
@@ -11,7 +11,7 @@
 }
 
 .message > .username {
-    @apply font-extrabold text-textColor-light-2 dark:text-textColor-dark-2;
+    @apply font-extrabold text-light-2 dark:text-dark-2;
 }
 
 .message > .content {
