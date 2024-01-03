@@ -13,5 +13,6 @@ export default defineConfig({
             },
         }),
     ],
-    site: 'https://attituding.xyz',
+    site: 'https://frontend4gpt.github.io',
+    base: '/frontend',
 });
